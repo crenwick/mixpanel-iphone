@@ -233,16 +233,13 @@
     self.bodyLabel.font = [UIFont systemFontOfSize:14.0f];
     self.bodyLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.bodyLabel.numberOfLines = 0;
-
-    if (!self.backgroundColor) {
-        self.backgroundColor = [UIColor mp_applicationPrimaryColor];
-        if (!self.backgroundColor) {
-            self.backgroundColor = [UIColor mp_darkEffectColor];
-        }
+    
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+        [self initializeIpadMiniNotification];
+    } else {
+        [self initializeIphoneMiniNotification];
     }
 
-    UIColor *backgroundColorWithAlphaComponent = [self.backgroundColor colorWithAlphaComponent:0.95f];
-    self.view.backgroundColor = backgroundColorWithAlphaComponent;
 
     if (self.notification != nil) {
         if (self.notification.image != nil) {
@@ -260,13 +257,8 @@
         }
     }
 
-    self.circleLayer = [CircleLayer layer];
-    self.circleLayer.contentsScale = [UIScreen mainScreen].scale;
-    [self.circleLayer setNeedsDisplay];
-
     [self.view addSubview:self.imageView];
     [self.view addSubview:self.bodyLabel];
-    [self.view.layer addSublayer:self.circleLayer];
 
     self.view.frame = CGRectMake(0.0f, 0.0f, 0.0f, 30.0f);
 
@@ -276,6 +268,30 @@
 
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didPan:)];
     [self.view addGestureRecognizer:pan];
+    
+}
+
+- (void)initializeIphoneMiniNotification {
+    if (!self.backgroundColor) {
+        self.backgroundColor = [UIColor mp_applicationPrimaryColor];
+        if (!self.backgroundColor) {
+            self.backgroundColor = [UIColor mp_darkEffectColor];
+        }
+    }
+    UIColor *backgroundColorWithAlphaComponent = [self.backgroundColor colorWithAlphaComponent:0.95f];
+    self.view.backgroundColor = backgroundColorWithAlphaComponent;
+    
+    self.circleLayer = [CircleLayer layer];
+    self.circleLayer.contentsScale = [UIScreen mainScreen].scale;
+    [self.circleLayer setNeedsDisplay];
+    [self.view.layer addSublayer:self.circleLayer];
+}
+
+- (void)initializeIpadMiniNotification {
+    self.backgroundColor = [UIColor colorWithRed:153/255.f green:23/255.f blue:23/255.f alpha:1];
+    self.view.backgroundColor = self.backgroundColor;
+    UIColor *backgroundColorWithAlphaComponent = [self.backgroundColor colorWithAlphaComponent:0.8f];
+    self.view.backgroundColor = backgroundColorWithAlphaComponent;
 }
 
 - (void)viewWillLayoutSubviews
@@ -296,7 +312,13 @@
     parentFrame = CGRectApplyAffineTransform(parentView.frame, CGAffineTransformMakeRotation((float)angle));
 #endif
 
-    self.view.frame = CGRectMake(0.0f, parentFrame.size.height - MPNotifHeight, parentFrame.size.width, MPNotifHeight * 3.0f);
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+        self.view.frame = CGRectMake(parentFrame.size.width/4, parentFrame.size.height - MPNotifHeight - 10, parentFrame.size.width/2, MPNotifHeight);
+        self.view.clipsToBounds = true;
+        self.view.layer.cornerRadius = 6;
+    } else {
+        self.view.frame = CGRectMake(0.0f, parentFrame.size.height - MPNotifHeight, parentFrame.size.width, MPNotifHeight * 3.0f);
+    }
 
     // Position images
     self.imageView.layer.position = CGPointMake(MPNotifHeight / 2.0f, MPNotifHeight / 2.0f);

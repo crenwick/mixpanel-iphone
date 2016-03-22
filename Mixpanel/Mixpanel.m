@@ -1747,7 +1747,7 @@ static void MixpanelReachabilityCallback(SCNetworkReachabilityRef target, SCNetw
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [self notificationController:controller wasDismissedWithStatus:NO];
     });
-    return YES;
+    return NO;//YAR CHANGED TO NO FOR TESTING
 }
 
 - (void)notificationController:(MPNotificationViewController *)controller wasDismissedWithStatus:(BOOL)status
