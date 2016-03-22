@@ -136,6 +136,7 @@
 		C38D5D9DCA172D6D7A02D1A4 /* MPABTestDesignerDeviceInfoRequestMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C38D5C1843D5E8AE8715E3F4 /* MPABTestDesignerDeviceInfoRequestMessage.m */; };
 		C38D5F1EC13BC9516244A3D1 /* MPUIFontToNSDictionaryValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = C38D59D48B2ACA126B6EC956 /* MPUIFontToNSDictionaryValueTransformer.m */; };
 		C805677F6DE74593B72FE043 /* libPods-HelloMixpanel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2497EBE08734F3183857AE1 /* libPods-HelloMixpanel.a */; };
+		E150CB771CA1DDD900F8A5C3 /* MPNotification~ipad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E150CB761CA1DDD900F8A5C3 /* MPNotification~ipad.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -468,6 +469,7 @@
 		C38D5E68E9D932B440AB3FB7 /* MPBOOLToNSNumberValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBOOLToNSNumberValueTransformer.m; sourceTree = "<group>"; };
 		C38D5F4F61761A35C80A668D /* NSInvocation+MPHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+MPHelpers.h"; sourceTree = "<group>"; };
 		C38D5F58D1809C6432B8B45B /* MPABTestDesignerChangeResponseMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPABTestDesignerChangeResponseMessage.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		E150CB761CA1DDD900F8A5C3 /* MPNotification~ipad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "MPNotification~ipad.storyboard"; sourceTree = "<group>"; };
 		EBBED9E8EC134DC598B35DC2 /* libPods-ABTestingTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ABTestingTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFA77763734E325585C0F2BE /* Pods-EventBindingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventBindingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventBindingTests/Pods-EventBindingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FF297B2686389D0DE61F0CF1 /* Pods-HelloMixpanel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloMixpanel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HelloMixpanel/Pods-HelloMixpanel.debug.xcconfig"; sourceTree = "<group>"; };
@@ -768,6 +770,7 @@
 				86CC974C1811F82D0003EF50 /* MPNotification.h */,
 				86CC974D1811F82D0003EF50 /* MPNotification.m */,
 				86CC974F18120A7E0003EF50 /* MPNotification.storyboard */,
+				E150CB761CA1DDD900F8A5C3 /* MPNotification~ipad.storyboard */,
 				05F02D6118528F8C00527D93 /* MPNotificationViewController.h */,
 				05F02D6218528F8C00527D93 /* MPNotificationViewController.m */,
 				28526F0917C417E000A0F32F /* MPSurvey.h */,
@@ -1144,6 +1147,7 @@
 				28C7E667161530BF00F78E49 /* Icon@2x.png in Resources */,
 				28C7E6691615311100F78E49 /* Icon.png in Resources */,
 				28C7E66B1615317400F78E49 /* Icon-72.png in Resources */,
+				E150CB771CA1DDD900F8A5C3 /* MPNotification~ipad.storyboard in Resources */,
 				0542371F199BDFD100BE25E7 /* test_decide_response_2.json in Resources */,
 				286903FF17C6D2CF00DCA073 /* Default-568h@2x.png in Resources */,
 				86CC975018120A7E0003EF50 /* MPNotification.storyboard in Resources */,

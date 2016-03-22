@@ -72,7 +72,7 @@
 @property (nonatomic, strong) IBOutlet UIButton *okayButton;
 @property (nonatomic, strong) IBOutlet UIButton *closeButton;
 @property (nonatomic, strong) IBOutlet UIImageView *backgroundImageView;
-@property (nonatomic, strong) IBOutlet UIView *imageDragView;
+@property (nonatomic, strong) IBOutlet UIView *viewMask;
 
 @end
 
@@ -111,6 +111,9 @@
     self.imageView.layer.shadowOpacity = 1.0f;
     self.imageView.layer.shadowRadius = 5.0f;
     self.imageView.layer.shadowColor = [UIColor blackColor].CGColor;
+    
+    self.viewMask.clipsToBounds = YES;
+    self.viewMask.layer.cornerRadius = 6.f;
 }
 
 - (void)hideWithAnimation:(BOOL)animated completion:(void (^)(void))completion
@@ -524,8 +527,12 @@
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super initWithCoder:aDecoder]) {
-        self.layer.backgroundColor = [UIColor colorWithRed:43.0f/255.0f green:43.0f/255.0f blue:52.0f/255.0f alpha:1.0f].CGColor;
-        self.layer.cornerRadius = 17.0f;
+        if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+            self.layer.cornerRadius = 5.0f;
+        } else {
+            self.layer.backgroundColor = [UIColor colorWithRed:43.0f/255.0f green:43.0f/255.0f blue:52.0f/255.0f alpha:1.0f].CGColor;
+            self.layer.cornerRadius = 17.0f;
+        }
         self.layer.borderColor = [UIColor whiteColor].CGColor;
         self.layer.borderWidth = 2.0f;
     }
