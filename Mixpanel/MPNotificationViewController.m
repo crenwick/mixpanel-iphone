@@ -117,7 +117,7 @@
     
     //YAR: FOR TESTING
 //    self.titleView.text = @"Hello what's up is every?";
-//    self.bodyView.text = @"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww";
+//    self.bodyView.text = @"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww";
 //    [self.okayButton setTitle:@"WWWWWWWWWWWWWWWWWWWWWWWWW" forState:UIControlStateNormal];
     //END OF TESTING
 }
