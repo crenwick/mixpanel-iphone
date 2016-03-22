@@ -116,9 +116,9 @@
     self.viewMask.layer.cornerRadius = 6.f;
     
     //YAR: FOR TESTING
-    self.titleView.text = @"Hello what's up is every?";
-    self.bodyView.text = @"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww";
-    [self.okayButton setTitle:@"WWWWWWWWWWWWWWWWWWWWWWWWW" forState:UIControlStateNormal];
+//    self.titleView.text = @"Hello what's up is every?";
+//    self.bodyView.text = @"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww";
+//    [self.okayButton setTitle:@"WWWWWWWWWWWWWWWWWWWWWWWWW" forState:UIControlStateNormal];
     //END OF TESTING
 }
 

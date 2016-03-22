@@ -38,15 +38,9 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="15" y="25" width="330" height="36"/>
-                                                </variation>
                                             </label>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="yfm-eO-1Kk" userLabel="Notif Image View">
                                                 <rect key="frame" x="20" y="50" width="560" height="410"/>
-                                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="15" y="81" width="330" height="301"/>
-                                                </variation>
                                                 <connections>
                                                     <outletCollection property="gestureRecognizers" destination="KOJ-hj-N0C" appends="YES" id="ibC-7J-PSX"/>
                                                 </connections>
@@ -123,7 +117,7 @@
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="Notification body" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfe-an-bA3">
                                         <rect key="frame" x="30" y="509" width="540" height="21"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -181,7 +175,7 @@
                                     <constraint firstItem="Mfe-an-bA3" firstAttribute="leading" secondItem="LgK-NT-8y6" secondAttribute="leading" constant="30" id="t98-G3-PkL">
                                         <variation key="heightClass=regular-widthClass=regular" constant="30"/>
                                     </constraint>
-                                    <constraint firstAttribute="width" secondItem="LgK-NT-8y6" secondAttribute="height" multiplier="353:505" id="uao-fb-4bh"/>
+                                    <constraint firstAttribute="width" secondItem="LgK-NT-8y6" secondAttribute="height" multiplier="352:503" id="uao-fb-4bh"/>
                                     <constraint firstAttribute="trailing" secondItem="FMe-MR-Hqn" secondAttribute="trailing" constant="383" id="yU1-9n-ptS">
                                         <variation key="heightClass=regular-widthClass=regular" constant="15"/>
                                     </constraint>
@@ -245,6 +239,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="LgK-NT-8y6" firstAttribute="centerX" secondItem="2Yu-YM-oIh" secondAttribute="centerX" id="0wc-qO-8fQ"/>
+                            <constraint firstItem="LgK-NT-8y6" firstAttribute="height" relation="lessThanOrEqual" secondItem="2Yu-YM-oIh" secondAttribute="height" multiplier="0.8" id="7FQ-n5-y81"/>
                             <constraint firstItem="qZk-XC-zXL" firstAttribute="leading" secondItem="2Yu-YM-oIh" secondAttribute="leading" id="9sU-KY-Jnw"/>
                             <constraint firstItem="LgK-NT-8y6" firstAttribute="top" secondItem="2Yu-YM-oIh" secondAttribute="top" id="AmZ-kc-UIL"/>
                             <constraint firstItem="LgK-NT-8y6" firstAttribute="height" secondItem="2Yu-YM-oIh" secondAttribute="height" multiplier="0.4" id="DxC-ko-6G0"/>
@@ -278,6 +273,7 @@
                                 <exclude reference="gkW-Qk-P2U"/>
                                 <exclude reference="vXj-uN-RST"/>
                                 <exclude reference="0wc-qO-8fQ"/>
+                                <exclude reference="7FQ-n5-y81"/>
                                 <exclude reference="DxC-ko-6G0"/>
                                 <exclude reference="Jt4-bs-yp4"/>
                                 <exclude reference="d4e-Ir-3GX"/>
@@ -297,6 +293,7 @@
                                 <exclude reference="gkW-Qk-P2U"/>
                                 <include reference="vXj-uN-RST"/>
                                 <include reference="0wc-qO-8fQ"/>
+                                <include reference="7FQ-n5-y81"/>
                                 <exclude reference="AmZ-kc-UIL"/>
                                 <exclude reference="DxC-ko-6G0"/>
                                 <include reference="Jt4-bs-yp4"/>
