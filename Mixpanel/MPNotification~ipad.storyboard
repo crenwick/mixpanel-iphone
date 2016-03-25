@@ -26,20 +26,20 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LgK-NT-8y6" userLabel="Bg Mask">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LgK-NT-8y6" userLabel="Bg Mask">
                                 <rect key="frame" x="178" y="98" width="244" height="406"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sB7-Or-yMr" customClass="MPAlphaMaskView">
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sB7-Or-yMr" customClass="MPAlphaMaskView">
                                         <rect key="frame" x="0.0" y="1" width="244" height="226"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" verticalCompressionResistancePriority="760" text="Notification Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MhL-xY-otj">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" verticalCompressionResistancePriority="760" ambiguous="YES" misplaced="YES" text="Notification Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MhL-xY-otj">
                                                 <rect key="frame" x="30" y="31" width="184" height="34"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="yfm-eO-1Kk" userLabel="Notif Image View">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yfm-eO-1Kk" userLabel="Notif Image View">
                                                 <rect key="frame" x="30" y="95" width="184" height="132"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="yfm-eO-1Kk" secondAttribute="height" multiplier="300:215" id="qNO-iA-U7K"/>
@@ -68,12 +68,14 @@
                                                 <variation key="heightClass=regular-widthClass=regular" constant="30"/>
                                             </constraint>
                                             <constraint firstItem="MhL-xY-otj" firstAttribute="leading" secondItem="sB7-Or-yMr" secondAttribute="leading" constant="30" id="ctx-g8-YAT"/>
-                                            <constraint firstItem="yfm-eO-1Kk" firstAttribute="top" secondItem="MhL-xY-otj" secondAttribute="bottom" constant="30" id="f5M-PW-DxB"/>
+                                            <constraint firstItem="yfm-eO-1Kk" firstAttribute="top" secondItem="MhL-xY-otj" secondAttribute="bottom" constant="30" id="f5M-PW-DxB">
+                                                <variation key="heightClass=compact" constant="10"/>
+                                            </constraint>
                                             <constraint firstAttribute="trailing" secondItem="MhL-xY-otj" secondAttribute="trailing" constant="30" id="lAi-AQ-79C"/>
                                             <constraint firstItem="yfm-eO-1Kk" firstAttribute="leading" secondItem="sB7-Or-yMr" secondAttribute="leading" constant="30" id="lGV-pC-coz"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMe-MR-Hqn" userLabel="Button - Close">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMe-MR-Hqn" userLabel="Button - Close">
                                         <rect key="frame" x="206" y="16" width="23" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="23" id="QbT-f4-K2X"/>
@@ -89,7 +91,7 @@
                                             <action selector="pressedClose" destination="sdD-ch-ejo" eventType="touchUpInside" id="nol-s6-HFh"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="Notification body" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfe-an-bA3">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" ambiguous="YES" misplaced="YES" text="Notification body" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfe-an-bA3">
                                         <rect key="frame" x="30" y="257" width="184" height="24"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -97,7 +99,7 @@
                                         <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <size key="shadowOffset" width="0.0" height="1"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wb-pt-clc" customClass="MPActionButton">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wb-pt-clc" customClass="MPActionButton">
                                         <rect key="frame" x="58" y="311" width="128" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -120,14 +122,19 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Mfe-an-bA3" firstAttribute="top" secondItem="sB7-Or-yMr" secondAttribute="bottom" constant="30" id="9CS-Ii-6tO"/>
+                                    <constraint firstItem="Mfe-an-bA3" firstAttribute="top" secondItem="sB7-Or-yMr" secondAttribute="bottom" constant="30" id="9CS-Ii-6tO">
+                                        <variation key="heightClass=compact" constant="10"/>
+                                    </constraint>
                                     <constraint firstAttribute="trailing" secondItem="sB7-Or-yMr" secondAttribute="trailing" id="BG0-qC-Jpx"/>
                                     <constraint firstItem="0wb-pt-clc" firstAttribute="centerX" secondItem="LgK-NT-8y6" secondAttribute="centerX" id="D2Z-1M-5WF"/>
-                                    <constraint firstItem="0wb-pt-clc" firstAttribute="top" secondItem="Mfe-an-bA3" secondAttribute="bottom" constant="30" id="ITl-0m-Yk3"/>
+                                    <constraint firstItem="0wb-pt-clc" firstAttribute="top" secondItem="Mfe-an-bA3" secondAttribute="bottom" constant="30" id="ITl-0m-Yk3">
+                                        <variation key="heightClass=compact" constant="10"/>
+                                    </constraint>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0wb-pt-clc" secondAttribute="trailing" constant="30" id="J5l-Xt-Poh"/>
                                     <constraint firstItem="sB7-Or-yMr" firstAttribute="top" secondItem="LgK-NT-8y6" secondAttribute="top" id="Lcx-EZ-HhC"/>
                                     <constraint firstAttribute="bottom" secondItem="0wb-pt-clc" secondAttribute="bottom" constant="45" id="PMw-qh-JJd">
-                                        <variation key="widthClass=compact" constant="30"/>
+                                        <variation key="heightClass=compact" constant="15"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="30"/>
                                         <variation key="heightClass=regular-widthClass=regular" constant="45"/>
                                     </constraint>
                                     <constraint firstItem="sB7-Or-yMr" firstAttribute="leading" secondItem="LgK-NT-8y6" secondAttribute="leading" id="dub-qO-Nxs"/>

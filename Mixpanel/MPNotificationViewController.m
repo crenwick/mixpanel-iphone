@@ -111,6 +111,9 @@
     self.imageView.layer.shadowOpacity = 1.0f;
     self.imageView.layer.shadowRadius = 5.0f;
     self.imageView.layer.shadowColor = [UIColor blackColor].CGColor;
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+        self.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    }
     
     self.viewMask.clipsToBounds = YES;
     self.viewMask.layer.cornerRadius = 6.f;
