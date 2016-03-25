@@ -555,12 +555,12 @@
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super initWithCoder:aDecoder]) {
-        if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+//        if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
             self.layer.cornerRadius = 5.0f;
-        } else {
-            self.layer.backgroundColor = [UIColor colorWithRed:43.0f/255.0f green:43.0f/255.0f blue:52.0f/255.0f alpha:1.0f].CGColor;
-            self.layer.cornerRadius = 17.0f;
-        }
+//        } else {
+//            self.layer.backgroundColor = [UIColor colorWithRed:43.0f/255.0f green:43.0f/255.0f blue:52.0f/255.0f alpha:1.0f].CGColor;
+//            self.layer.cornerRadius = 17.0f;
+//        }
         self.layer.borderColor = [UIColor whiteColor].CGColor;
         self.layer.borderWidth = 2.0f;
     }
