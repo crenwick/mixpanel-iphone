@@ -111,18 +111,12 @@
     self.imageView.layer.shadowOpacity = 1.0f;
     self.imageView.layer.shadowRadius = 5.0f;
     self.imageView.layer.shadowColor = [UIColor blackColor].CGColor;
-    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         self.imageView.contentMode = UIViewContentModeScaleAspectFill;
     }
     
     self.viewMask.clipsToBounds = YES;
     self.viewMask.layer.cornerRadius = 6.f;
-    
-    //YAR: FOR TESTING
-//    self.titleView.text = @"Hello what's up is every?";
-//    self.bodyView.text = @"wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww";
-//    [self.okayButton setTitle:@"WWWWWWWWWWWWWWWWWWWWWWWWW" forState:UIControlStateNormal];
-    //END OF TESTING
 }
 
 - (void)hideWithAnimation:(BOOL)animated completion:(void (^)(void))completion
@@ -237,12 +231,7 @@
     self.bodyLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.bodyLabel.numberOfLines = 0;
     
-    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
-        [self initializeIpadMiniNotification];
-    } else {
-        [self initializeIphoneMiniNotification];
-    }
-
+    [self initializeMiniNotification];
 
     if (self.notification != nil) {
         if (self.notification.image != nil) {
@@ -274,23 +263,7 @@
     
 }
 
-- (void)initializeIphoneMiniNotification {
-    if (!self.backgroundColor) {
-        self.backgroundColor = [UIColor mp_applicationPrimaryColor];
-        if (!self.backgroundColor) {
-            self.backgroundColor = [UIColor mp_darkEffectColor];
-        }
-    }
-    UIColor *backgroundColorWithAlphaComponent = [self.backgroundColor colorWithAlphaComponent:0.95f];
-    self.view.backgroundColor = backgroundColorWithAlphaComponent;
-    
-    self.circleLayer = [CircleLayer layer];
-    self.circleLayer.contentsScale = [UIScreen mainScreen].scale;
-    [self.circleLayer setNeedsDisplay];
-    [self.view.layer addSublayer:self.circleLayer];
-}
-
-- (void)initializeIpadMiniNotification {
+- (void)initializeMiniNotification {
     self.backgroundColor = [UIColor colorWithRed:153/255.f green:23/255.f blue:23/255.f alpha:1];
     self.view.backgroundColor = self.backgroundColor;
     UIColor *backgroundColorWithAlphaComponent = [self.backgroundColor colorWithAlphaComponent:0.8f];
@@ -315,13 +288,13 @@
     parentFrame = CGRectApplyAffineTransform(parentView.frame, CGAffineTransformMakeRotation((float)angle));
 #endif
 
-    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
-        self.view.frame = CGRectMake(parentFrame.size.width/4, parentFrame.size.height - MPNotifHeight - 10, parentFrame.size.width/2, MPNotifHeight);
-        self.view.clipsToBounds = true;
-        self.view.layer.cornerRadius = 6;
+    if (UIDeviceOrientationIsPortrait([UIDevice currentDevice].orientation) && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        self.view.frame = CGRectMake(15, parentFrame.size.height - MPNotifHeight - 10, parentFrame.size.width - 30, MPNotifHeight);
     } else {
-        self.view.frame = CGRectMake(0.0f, parentFrame.size.height - MPNotifHeight, parentFrame.size.width, MPNotifHeight * 3.0f);
+        self.view.frame = CGRectMake(parentFrame.size.width/4, parentFrame.size.height - MPNotifHeight - 10, parentFrame.size.width/2, MPNotifHeight);
     }
+    self.view.clipsToBounds = true;
+    self.view.layer.cornerRadius = 6;
 
     // Position images
     self.imageView.layer.position = CGPointMake(MPNotifHeight / 2.0f, MPNotifHeight / 2.0f);
@@ -558,12 +531,7 @@
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super initWithCoder:aDecoder]) {
-//        if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
-            self.layer.cornerRadius = 5.0f;
-//        } else {
-//            self.layer.backgroundColor = [UIColor colorWithRed:43.0f/255.0f green:43.0f/255.0f blue:52.0f/255.0f alpha:1.0f].CGColor;
-//            self.layer.cornerRadius = 17.0f;
-//        }
+        self.layer.cornerRadius = 5.0f;
         self.layer.borderColor = [UIColor whiteColor].CGColor;
         self.layer.borderWidth = 2.0f;
     }

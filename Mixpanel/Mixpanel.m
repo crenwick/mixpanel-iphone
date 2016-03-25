@@ -1714,12 +1714,7 @@ static void MixpanelReachabilityCallback(SCNetworkReachabilityRef target, SCNetw
     UIViewController *presentingViewController = [Mixpanel topPresentedViewController];
 
     if ([[self class] canPresentFromViewController:presentingViewController]) {
-        UIStoryboard *storyboard;
-//        if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
-            storyboard = [UIStoryboard storyboardWithName:@"MPNotification~ipad" bundle:[NSBundle bundleForClass:Mixpanel.class]];
-//        } else {
-//            storyboard = [UIStoryboard storyboardWithName:@"MPNotification" bundle:[NSBundle bundleForClass:Mixpanel.class]];
-//        }
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MPNotification" bundle:[NSBundle bundleForClass:Mixpanel.class]];
         MPTakeoverNotificationViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"MPNotificationViewController"];
         controller.backgroundImage = [presentingViewController.view mp_snapshotImage];
         controller.notification = notification;
