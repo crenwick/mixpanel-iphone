@@ -1714,7 +1714,14 @@ static void MixpanelReachabilityCallback(SCNetworkReachabilityRef target, SCNetw
     UIViewController *presentingViewController = [Mixpanel topPresentedViewController];
 
     if ([[self class] canPresentFromViewController:presentingViewController]) {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MPNotification" bundle:[NSBundle bundleForClass:Mixpanel.class]];
+        UIStoryboard *storyboard;
+        if (UIDeviceOrientationIsPortrait([UIDevice currentDevice].orientation) && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+            storyboard = [UIStoryboard storyboardWithName:@"MPNotification~iPhonePortrait" bundle:[NSBundle bundleForClass:Mixpanel.class]];
+        } else if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation) && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+            storyboard = [UIStoryboard storyboardWithName:@"MPNotification~iPhoneLandscape" bundle:[NSBundle bundleForClass:Mixpanel.class]];
+        } else {
+            storyboard = [UIStoryboard storyboardWithName:@"MPNotification~iPad" bundle:[NSBundle bundleForClass:Mixpanel.class]];
+        }
         MPTakeoverNotificationViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"MPNotificationViewController"];
         controller.backgroundImage = [presentingViewController.view mp_snapshotImage];
         controller.notification = notification;
