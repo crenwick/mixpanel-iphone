@@ -111,10 +111,6 @@
     self.imageView.layer.shadowOpacity = 1.0f;
     self.imageView.layer.shadowRadius = 5.0f;
     self.imageView.layer.shadowColor = [UIColor blackColor].CGColor;
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        self.imageView.contentMode = UIViewContentModeScaleAspectFill;
-    }
-    
     self.viewMask.clipsToBounds = YES;
     self.viewMask.layer.cornerRadius = 6.f;
 }
@@ -264,7 +260,7 @@
 }
 
 - (void)initializeMiniNotification {
-    self.backgroundColor = [UIColor colorWithRed:153/255.f green:23/255.f blue:23/255.f alpha:1];
+    self.backgroundColor = [UIColor blackColor];
     self.view.backgroundColor = self.backgroundColor;
     UIColor *backgroundColorWithAlphaComponent = [self.backgroundColor colorWithAlphaComponent:0.8f];
     self.view.backgroundColor = backgroundColorWithAlphaComponent;

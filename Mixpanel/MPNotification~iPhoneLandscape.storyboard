@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Takeover Notification View Controller-->
@@ -28,17 +29,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c5r-pu-Zap" customClass="MPAlphaMaskView">
-                                        <rect key="frame" x="0.0" y="0.0" width="568" height="231"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="284" height="320"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" verticalCompressionResistancePriority="760" text="Notification Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TL6-Ph-CfV">
-                                                <rect key="frame" x="30" y="20" width="508" height="29"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            </label>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="JTb-Gg-dua" userLabel="Notif Image View">
-                                                <rect key="frame" x="30" y="59" width="508" height="172"/>
+                                                <rect key="frame" x="20" y="20" width="244" height="326"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="JTb-Gg-dua" secondAttribute="height" multiplier="524:700" id="GGz-ox-zZB"/>
+                                                </constraints>
                                                 <connections>
                                                     <outletCollection property="gestureRecognizers" destination="lOo-d3-RuQ" appends="YES" id="6TJ-dV-pgi"/>
                                                 </connections>
@@ -46,77 +43,101 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="JTb-Gg-dua" firstAttribute="top" secondItem="TL6-Ph-CfV" secondAttribute="bottom" constant="10" id="30S-gT-242"/>
-                                            <constraint firstItem="JTb-Gg-dua" firstAttribute="leading" secondItem="c5r-pu-Zap" secondAttribute="leading" constant="30" id="6Fb-4k-gNm"/>
-                                            <constraint firstItem="TL6-Ph-CfV" firstAttribute="leading" secondItem="c5r-pu-Zap" secondAttribute="leading" constant="30" id="Amj-lh-hPf"/>
-                                            <constraint firstItem="TL6-Ph-CfV" firstAttribute="top" secondItem="c5r-pu-Zap" secondAttribute="top" constant="20" id="XNr-42-rom"/>
-                                            <constraint firstAttribute="trailing" secondItem="TL6-Ph-CfV" secondAttribute="trailing" constant="30" id="dRl-CE-yu8"/>
-                                            <constraint firstAttribute="bottom" secondItem="JTb-Gg-dua" secondAttribute="bottom" id="jVq-0v-YiM"/>
-                                            <constraint firstAttribute="trailing" secondItem="JTb-Gg-dua" secondAttribute="trailing" constant="30" id="wgf-Yh-uzS"/>
+                                            <constraint firstItem="JTb-Gg-dua" firstAttribute="leading" secondItem="c5r-pu-Zap" secondAttribute="leading" constant="20" id="JPo-lE-nbf"/>
+                                            <constraint firstItem="JTb-Gg-dua" firstAttribute="top" secondItem="c5r-pu-Zap" secondAttribute="top" constant="20" id="wC9-k7-l4I"/>
+                                            <constraint firstItem="JTb-Gg-dua" firstAttribute="centerX" secondItem="c5r-pu-Zap" secondAttribute="centerX" id="zd4-7V-Gca"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BdA-WI-b9a" userLabel="Button - Close">
-                                        <rect key="frame" x="530" y="25" width="23" height="23"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="23" id="3sU-D7-YLk"/>
-                                            <constraint firstAttribute="width" constant="23" id="fZe-jC-rwl"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="10"/>
-                                        <state key="normal" image="MPCloseBtnIpad">
-                                            <color key="titleColor" red="0.6588235294" green="0.70588235290000001" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="pressedClose" destination="gXT-M3-ShW" eventType="touchUpInside" id="TIR-lR-I9y"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="Notification body" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WsX-gR-eTv">
-                                        <rect key="frame" x="20" y="231" width="528" height="24"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <size key="shadowOffset" width="0.0" height="1"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbQ-hZ-r3g" customClass="MPActionButton">
-                                        <rect key="frame" x="220" y="265" width="128" height="40"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q85-4m-1tE" userLabel="Middle Point">
+                                        <rect key="frame" x="284" y="160" width="1" height="1"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="128" id="NC4-NZ-K4r"/>
-                                            <constraint firstAttribute="height" constant="40" id="f3b-S5-cTT"/>
+                                            <constraint firstAttribute="height" constant="1" id="8Aq-36-PgK"/>
+                                            <constraint firstAttribute="width" constant="1" id="AA4-Es-54k"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
-                                        <inset key="contentEdgeInsets" minX="15" minY="8" maxX="15" maxY="9"/>
-                                        <state key="normal" title="Cool!">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="pressedOkay" destination="gXT-M3-ShW" eventType="touchUpInside" id="n2e-mi-wf1"/>
-                                        </connections>
-                                    </button>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="00c-pG-JPz">
+                                        <rect key="frame" x="285" y="101" width="283" height="118"/>
+                                        <subviews>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" verticalCompressionResistancePriority="760" text="Notification Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TL6-Ph-CfV">
+                                                <rect key="frame" x="15" y="0.0" width="253" height="29"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="Notification body" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WsX-gR-eTv">
+                                                <rect key="frame" x="15" y="39" width="253" height="24"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <size key="shadowOffset" width="0.0" height="1"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbQ-hZ-r3g" customClass="MPActionButton">
+                                                <rect key="frame" x="78" y="78" width="128" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="128" id="NC4-NZ-K4r"/>
+                                                    <constraint firstAttribute="height" constant="40" id="f3b-S5-cTT"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                <inset key="contentEdgeInsets" minX="15" minY="8" maxX="15" maxY="9"/>
+                                                <state key="normal" title="Cool!">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressedOkay" destination="gXT-M3-ShW" eventType="touchUpInside" id="n2e-mi-wf1"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="TL6-Ph-CfV" firstAttribute="top" secondItem="00c-pG-JPz" secondAttribute="top" id="5d0-vq-PaI"/>
+                                            <constraint firstItem="WsX-gR-eTv" firstAttribute="top" secondItem="TL6-Ph-CfV" secondAttribute="bottom" constant="10" id="8rl-7C-BBg"/>
+                                            <constraint firstAttribute="trailing" secondItem="TL6-Ph-CfV" secondAttribute="trailing" constant="15" id="Hfz-CT-7CS"/>
+                                            <constraint firstItem="mbQ-hZ-r3g" firstAttribute="centerX" secondItem="00c-pG-JPz" secondAttribute="centerX" id="JYq-UY-0PA"/>
+                                            <constraint firstAttribute="trailing" secondItem="WsX-gR-eTv" secondAttribute="trailing" constant="15" id="cRo-KY-9GK"/>
+                                            <constraint firstItem="TL6-Ph-CfV" firstAttribute="leading" secondItem="00c-pG-JPz" secondAttribute="leading" constant="15" id="hof-si-xwh"/>
+                                            <constraint firstItem="mbQ-hZ-r3g" firstAttribute="top" secondItem="WsX-gR-eTv" secondAttribute="bottom" constant="15" id="kIu-00-fAo"/>
+                                            <constraint firstItem="WsX-gR-eTv" firstAttribute="leading" secondItem="00c-pG-JPz" secondAttribute="leading" constant="15" id="slD-wO-bpi"/>
+                                            <constraint firstAttribute="bottom" secondItem="mbQ-hZ-r3g" secondAttribute="bottom" id="zZG-rT-onM"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="WsX-gR-eTv" firstAttribute="top" secondItem="c5r-pu-Zap" secondAttribute="bottom" id="0dU-4a-UOh"/>
-                                    <constraint firstAttribute="bottom" secondItem="mbQ-hZ-r3g" secondAttribute="bottom" constant="15" id="67s-Yp-c3X"/>
-                                    <constraint firstAttribute="trailing" secondItem="c5r-pu-Zap" secondAttribute="trailing" id="G7b-n6-gyn"/>
-                                    <constraint firstItem="BdA-WI-b9a" firstAttribute="top" secondItem="rM7-WM-DTr" secondAttribute="top" constant="25" id="Jhd-xv-TdP"/>
-                                    <constraint firstItem="mbQ-hZ-r3g" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="rM7-WM-DTr" secondAttribute="leading" constant="30" id="L6t-au-6XB"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mbQ-hZ-r3g" secondAttribute="trailing" constant="30" id="WVa-t4-rH9"/>
-                                    <constraint firstAttribute="trailing" secondItem="BdA-WI-b9a" secondAttribute="trailing" constant="15" id="b1j-kN-a8y"/>
-                                    <constraint firstItem="mbQ-hZ-r3g" firstAttribute="top" secondItem="WsX-gR-eTv" secondAttribute="bottom" constant="10" id="cfg-cQ-9TK"/>
-                                    <constraint firstItem="WsX-gR-eTv" firstAttribute="leading" secondItem="rM7-WM-DTr" secondAttribute="leading" constant="20" id="m3q-mu-ykX"/>
-                                    <constraint firstItem="mbQ-hZ-r3g" firstAttribute="centerX" secondItem="rM7-WM-DTr" secondAttribute="centerX" id="nVE-6v-ueo"/>
-                                    <constraint firstAttribute="trailing" secondItem="WsX-gR-eTv" secondAttribute="trailing" constant="20" id="rwM-Af-BEM"/>
+                                    <constraint firstItem="q85-4m-1tE" firstAttribute="centerX" secondItem="rM7-WM-DTr" secondAttribute="centerX" id="0pC-eD-BNj"/>
+                                    <constraint firstItem="q85-4m-1tE" firstAttribute="leading" secondItem="c5r-pu-Zap" secondAttribute="trailing" id="5kH-FD-Ryx"/>
+                                    <constraint firstItem="00c-pG-JPz" firstAttribute="leading" secondItem="q85-4m-1tE" secondAttribute="trailing" id="7K7-Hf-vcK"/>
+                                    <constraint firstItem="00c-pG-JPz" firstAttribute="centerY" secondItem="rM7-WM-DTr" secondAttribute="centerY" id="SEU-3u-BfI"/>
+                                    <constraint firstAttribute="trailing" secondItem="00c-pG-JPz" secondAttribute="trailing" id="Yj0-tv-SD3"/>
+                                    <constraint firstAttribute="bottom" secondItem="c5r-pu-Zap" secondAttribute="bottom" id="guC-V2-1GX"/>
                                     <constraint firstItem="c5r-pu-Zap" firstAttribute="leading" secondItem="rM7-WM-DTr" secondAttribute="leading" id="wpF-2o-pw5"/>
                                     <constraint firstItem="c5r-pu-Zap" firstAttribute="top" secondItem="rM7-WM-DTr" secondAttribute="top" id="x3X-DE-20h"/>
+                                    <constraint firstItem="q85-4m-1tE" firstAttribute="centerY" secondItem="rM7-WM-DTr" secondAttribute="centerY" id="yGa-qe-wjT"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BdA-WI-b9a" userLabel="Button - Close">
+                                <rect key="frame" x="530" y="35" width="23" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="3sU-D7-YLk"/>
+                                    <constraint firstAttribute="width" constant="23" id="fZe-jC-rwl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="10"/>
+                                <state key="normal" image="MPCloseBtnIpad">
+                                    <color key="titleColor" red="0.6588235294" green="0.70588235290000001" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressedClose" destination="gXT-M3-ShW" eventType="touchUpInside" id="TIR-lR-I9y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -130,8 +151,10 @@
                             <constraint firstAttribute="trailing" secondItem="jOz-lz-dLd" secondAttribute="trailing" id="Q9c-Io-hba"/>
                             <constraint firstItem="zip-oN-AzW" firstAttribute="top" secondItem="MYm-On-C6L" secondAttribute="bottom" id="ROH-Ug-odx"/>
                             <constraint firstItem="jOz-lz-dLd" firstAttribute="leading" secondItem="JCp-9K-Kvi" secondAttribute="leading" id="UiU-NK-H3A"/>
+                            <constraint firstAttribute="trailing" secondItem="BdA-WI-b9a" secondAttribute="trailing" constant="15" id="XMG-Z4-PN4"/>
                             <constraint firstItem="rM7-WM-DTr" firstAttribute="centerY" secondItem="JCp-9K-Kvi" secondAttribute="centerY" id="pIg-wT-702"/>
                             <constraint firstItem="rM7-WM-DTr" firstAttribute="width" secondItem="jOz-lz-dLd" secondAttribute="width" id="vjB-JP-xLg"/>
+                            <constraint firstItem="BdA-WI-b9a" firstAttribute="top" secondItem="aNM-m7-atq" secondAttribute="bottom" constant="15" id="zze-1T-EcQ"/>
                         </constraints>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
